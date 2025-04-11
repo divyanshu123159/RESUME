@@ -1,8 +1,12 @@
-/* Base reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -11,30 +15,18 @@ body {
   background: url('forest-bg.jpg') no-repeat center center fixed;
   background-size: cover;
   line-height: 1.6;
-  position: relative;
-  z-index: 0;
+  padding: 0 1rem;
 }
 
-/* Dark overlay */
+/* Background overlay for contrast */
 body::before {
   content: '';
   position: fixed;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5); /* subtle dark layer */
   z-index: -1;
-}
-
-/* Container styling */
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  margin-top: 2rem;
-  animation: fadeInUp 1s ease;
 }
 
 /* Header */
@@ -53,26 +45,29 @@ header h1 {
 
 header p {
   font-size: 1.3rem;
-  color: #ddd;
+  color: #eee;
   animation: fadeIn 1.2s ease;
 }
 
 /* Sections */
+section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  animation: fadeInUp 1s ease;
+  text-align: center;
+}
+
 section h2 {
   color: #00eaff;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
   border-bottom: 2px solid #00eaff;
   display: inline-block;
   padding-bottom: 0.3rem;
-  animation: fadeInUp 1s ease;
 }
 
-ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-}
-
+/* Links & Text */
 a {
   color: #7bc8f6;
   text-decoration: none;
@@ -83,14 +78,43 @@ a:hover {
   text-decoration: underline;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 0.5rem 0;
+}
+
 /* Footer */
 footer {
   text-align: center;
   padding: 2rem 1rem;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   font-size: 1rem;
-  animation: fadeIn 1.5s ease;
-  color: #aaa;
+  color: #ccc;
+}
+
+/* Animated Button */
+.animated-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 1rem;
+  background: #00eaff;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.animated-btn:hover {
+  background: #00b7d4;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 234, 255, 0.5);
 }
 
 /* Animations */
@@ -119,29 +143,4 @@ footer {
     transform: translateY(0);
     opacity: 1;
   }
-}
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Animated button style */
-.animated-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 1rem;
-  background: #00eaff;
-  color: #000;
-  border: none;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.animated-btn:hover {
-  background: #00b7d4;
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 234, 255, 0.5);
 }
